@@ -56,3 +56,4 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_549950BA0B5E4B31BA2F713698D5B364 }}
           package: .
+          startUpCommand: 'pm2 serve /home/site/wwwroot --spa --no-daemon'
