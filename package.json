@@ -1,6 +1,7 @@
 {
   "name": "fairmont",
   "version": "0.1.0",
+  "homepage": "https://sa24700.github.io/capstone2",
   "private": true,
   "dependencies": {
     "@fullcalendar/core": "^6.1.4",
