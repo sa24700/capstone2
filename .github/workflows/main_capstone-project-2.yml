@@ -2,19 +2,15 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy Node.js app to Azure Web App - Capstone-Project-2
-MONGO_CRED = mongodb+srv://root:7eIl8exyQcwKGAk6@cluster0.rnnjm2f.mongodb.net/EventsDB
 
-JWT_SECRET = 
-
-PORT = 
-
-SENDINBLUE_API_KEY = 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
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-
+env:
+  MONGO_CRED: 'mongodb+srv://root:7eIl8exyQcwKGAk6@cluster0.rnnjm2f.mongodb.net/EventsDB'
+  SENDINBLUE_API_KEY: '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'
 jobs:
   build:
     runs-on: windows-latest
