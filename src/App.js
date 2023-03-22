@@ -9,6 +9,7 @@ import Gallery from './components/Gallery/Gallery';
 import Blog from './components/Blog/Blog';
 import Chatroom from './components/Chatroom/Chatroom';
 import Donate from './components/Donate/Donate';
+import OneBlogPost from './components/OneBlogPost/OneBlogPost'
 import {
   BrowserRouter as Router,
   Routes,
@@ -68,8 +69,9 @@ class App extends Component {
             <Route path="signin" element={<Signin loadUser={this.loadUser} getAppUser={this.getAppUser}/>}/>
             <Route path="register" element={<Register loadUser={this.loadUser} returnAppUser={this.getAppUser}/>}/>
             <Route path="about" element={<About getAppUser={this.getAppUser}/>}/>
-            <Route path="gallery" element={<Gallery/>}/>
+            <Route path="gallery" element={<Gallery/>}/>           
             <Route path="blog" element={<Blog/>}/>
+            <Route path="blog/:key" element={<OneBlogPost/>}/>         
             <Route path="chatroom" element={<Chatroom getAppUser={this.getAppUser}/>}/>
             <Route path="donate" element={<Donate/>}/>
             <Route path="newsletter" element={<Newsletter/>}/>

@@ -10,6 +10,10 @@ function AdminPanel(){
                 <li className="f5 link dim white underline pa3 pointer"><Link to="/download-emails">Download NewsLetter</Link></li>
                 <li className="f5 link dim white underline pa3 pointer"><Link to="/user-management">User Management</Link></li>
                 <li className="f5 link dim white underline pa3 pointer"><Link to="/support-link-management">Support Link Management</Link></li>
+                <li className="f5 link dim white underline pa3 pointer"><Link to="/createEvent">Create New Event</Link></li>
+                <li className="f5 link dim white underline pa3 pointer"><Link to="/create-new-post">Create New Blog Post</Link></li>            
+            
+            
             </ul>
         </div>
     );

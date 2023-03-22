@@ -86,9 +86,9 @@ export default class Calendar extends  Component{
     render(){
         
         return(      
-            <div className="container">
+            <div className="container pa6">
             <h2>Community Events</h2>     
-            <main>
+            <main  >
                 <FullCalendar
                     plugins={[ dayGridPlugin, interactionPlugin ]}
                     dateClick={ this.handleDateClick }

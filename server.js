@@ -109,7 +109,7 @@ app.get('/showAllBlogPosts', async function(req,res){
   try{
       
     const allPosts = await Blog.find();
-    console.log("allPosts " + allPosts);
+    
      res.end(JSON.stringify(allPosts));
   }
   catch(e){
@@ -117,16 +117,19 @@ app.get('/showAllBlogPosts', async function(req,res){
   }
 
 });
-app.post('/blog/:id', async function(req,res){
-  try{
+app.get('/getPost/:key', async function(req,res){
+  try{ 
       
-    const blogID = await Blog.find({_id: req.params.id});
-     res.end(JSON.stringify(blogID));
+    var blogID = await Blog.find({_id: req.params.key})
+     blogID = JSON.stringify(blogID);
+     res.end(blogID);
+
+   
   }
   catch(e){
     console.log(e);
   }
-
+ 
 });
 
 app.post('/createEvent', async function(req,res){

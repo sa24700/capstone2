@@ -1,12 +1,21 @@
 import React, {Component} from 'react'
 import axios from 'axios'; 
+import { Link } from 'react-router-dom';
+
  
 const BlogPost = props => (
-    <article>
-    <h2> {props.newPost["title"]}</h2>
-    <p>{props.newPost["author"]}</p>
-    <p>{props.newPost["content"]}</p>   
-    </article>
+     
+    <Link to= {props.newPost['_id']}   className='link dim black b'>
+        <article className="  w-50 pa0 ml-auto mr-auto mv2  bg-blue   ba bw2 b--dark-blue">
+            
+                <h2>{props.newPost["title"]}</h2>
+                <p>by: {props.newPost["author"]}</p>
+            
+            <div className='h-100 mb0 bt bw2 b--dark-blue bg-light-blue' >
+                <p>{props.newPost["content"]}</p>   
+            </div>
+        </article>
+    </Link>
 )
 export default class Blog extends Component{
     constructor(props){
