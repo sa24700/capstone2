@@ -10,7 +10,7 @@ function Newsletter(){
         const emailRegex = new RegExp('/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/');
         if (emailRegex.test(emailInput.current.value) === false){
             console.log("I'm a valid email" + emailInput.current.value);
-            const newPerson = {email : emailInput.current.value};
+            const newPerson = {email : emailInput.current.value, language: "english"};
             axios.post('http://localhost:5001/newsletter',newPerson).then(res => console.log(res.data));
  
         }
@@ -35,6 +35,7 @@ function Newsletter(){
                             <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                             <input 
                             ref={emailInput}
+                            
                             className="pa2 input-reset ba bg-transparent   w-100" 
                             type="email" 
                             name="email-address"  

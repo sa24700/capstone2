@@ -7,8 +7,8 @@ import interactionPlugin from "@fullcalendar/interaction"
 const Event = props => (
     <article>
     <h2> {props.newEvent["title"]}</h2>
-    <div>From: {props.newEvent["start"].slice(0,props.newEvent["start"].indexOf("T"))} to {props.newEvent["end"].slice(0,props.newEvent["end"].indexOf("T"))}</div>
-    <div>{props.newEvent["start"].slice(props.newEvent["start"].indexOf("T")+1,props.newEvent["start"].length)} to {props.newEvent["end"].slice(props.newEvent["end"].indexOf("T")+1,props.newEvent["end"].length)}</div>    
+    <div>From: {new Date(props.newEvent["start"]).toLocaleString()} to {new Date(props.newEvent["end"] ).toLocaleString()}</div>
+       
     <div>At: {props.newEvent["location"]}</div>
     <div>{props.newEvent["street"]}, {props.newEvent["state"]} {props.newEvent["zip"]}</div>
     <div>{props.newEvent["extraInfo"]}</div>   
@@ -61,6 +61,8 @@ export default class Calendar extends  Component{
                 console.log("index: " + index + " dateStart: " + dateStart + " dateEnd: " + dateEnd);
                 if(new Date(index) >= new Date(dateStart) && new Date(index) <= new Date(dateEnd)){
                     console.log("true " + element);
+
+                    
                     tempArray.push(element)
                     
                 }
@@ -94,6 +96,9 @@ export default class Calendar extends  Component{
                     dateClick={ this.handleDateClick }
                     initialView="dayGridMonth"
                     events = {this.addEvents()}
+                   
+                    displayEventTime = {false}
+
                 />
                 <p>For more information, click on the date containing the event you're curious about.</p>
             </main>

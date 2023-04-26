@@ -26,7 +26,8 @@ import CreateBlogPost from './components/CreateBlogPost/CreateBlogPost';
 import Calendar from './components/Calendar/Calendar';
 import CreateEvent from './components/CreateEvent/CreateEvent';
 import "react-datepicker/dist/react-datepicker.css";
-
+import NLForm from './components/NLForm/NLForm';
+import AddPhoto from './components/Gallery/AddPhoto';
 
 
 class App extends Component {
@@ -82,6 +83,9 @@ class App extends Component {
             <Route path="create-new-post" element={<CreateBlogPost/>}/>
             <Route path="createEvent" element={<CreateEvent/>}/>
             <Route path="calendar" element={<Calendar/>}/>
+            <Route path="send-newsletter-post" element={<NLForm/>}/>
+            <Route path="AddPhoto" element={<AddPhoto/>}/>
+            
           </Routes>
         </div>
       );

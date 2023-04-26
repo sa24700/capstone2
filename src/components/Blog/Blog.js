@@ -4,18 +4,19 @@ import { Link } from 'react-router-dom';
 
  
 const BlogPost = props => (
-     
-    <Link to= {props.newPost['_id']}   className='link dim black b'>
-        <article className="  w-50 pa0 ml-auto mr-auto mv2  bg-blue   ba bw2 b--dark-blue">
+      
+    <Link to= {props.newPost['_id']}  className=' db black link dim mv2 ' >
+        <article className='   bg-blue   ba bw2 b--dark-blue '>
             
                 <h2>{props.newPost["title"]}</h2>
                 <p>by: {props.newPost["author"]}</p>
             
             <div className='h-100 mb0 bt bw2 b--dark-blue bg-light-blue' >
-                <p>{props.newPost["content"]}</p>   
+                <p  className='tl pa3 ' style={{whiteSpace:'pre-wrap'}}>{props.newPost["content"]}</p>   
             </div>
         </article>
     </Link>
+     
 )
 export default class Blog extends Component{
     constructor(props){
@@ -36,7 +37,10 @@ export default class Blog extends Component{
         var reverseArray = this.state.posts;
         reverseArray = reverseArray.reverse();
         return reverseArray.map(element => {
-
+                if(element.content.length > 600){
+                    element.content = element.content.slice(0,600);
+                }
+            
             return <BlogPost newPost={element} key={element._id}/>
         });
     }
@@ -51,7 +55,9 @@ export default class Blog extends Component{
         return (
             <div>
                 <h1>Blog</h1>
-                {this.displayPosts()}
+                <section className='w-50 pa0 ml-auto mr-auto  '>
+                    {this.displayPosts()}
+                </section>
             </div>
         )
         
