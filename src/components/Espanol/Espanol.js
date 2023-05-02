@@ -1,5 +1,4 @@
 import React from "react";
-import Hero from "../Hero";
 import Navigation from "../Navigation/Navigation";
 import { Link } from "react-router-dom";
 import heartline_icon from "../../assets/heartline_icon.png";
@@ -7,38 +6,42 @@ import handshearts_icon from "../../assets/handshearts_icon.png";
 import tomato_icon from "../../assets/tomato_icon.png";
 import calendar_icon from "../../assets/calendar_icon.png";
 import heart_icon from "../../assets/heart_icon.png";
-import "./Home.css"
-import ImageSlider from "./ImageSlider";
+import ImageSlider from "../Home/ImageSlider";
+import "./Espanol.css";
 
 
-function Home(){
+
+function Espanol(){
     return (
         <div className="HomeContainer">
 
 
 
-            <div className="HomeBannerContainer">
+                <div className="HomeBannerContainer">
+                    <div className="HomeBanner">
                         
-                <div className="HomeBanner">
-                    <div className="BlueDiv">  
+                        <div className="WelcomeDiv">
+                              
+                                <h1>Bienvenido a la</h1>
+                                <h1>Fairmont Community </h1>
+                                <h1>Partnership Group, Inc. </h1>
+                                <p className="mt4 mb1">Nos comprometemos a trabajar con nuestros residentes y vecinos</p>
+                                <p className="mt0"> para la mejora continua de la comunidad de Fairmont.</p>
+                        </div>
+
+                        <div className="SlideShowDiv">
+                            <ImageSlider/>
+                        </div>
+                    </div>
+                    <div className="BlueBG"></div>
+                    <div className="BlueDiv">
                     </div>
 
-                    <div className="WelcomeDiv">
-                        <h1>Welcome to the </h1>
-                        <h1>Fairmont Community </h1>
-                        <h1>Partnership Group, Inc. </h1>
-                        <p className="mt4 mb1">We are committed to working with our residents and neighbors</p>
-                        <p className="mt0"> toward the continued improvement of the Fairmont Community.</p>
-                    </div>
-
-                    <div className="SlideShowDiv">
-                        <ImageSlider/>
-                    </div>
                 </div>
-            </div>
+           
 
-    
-            
+
+
 
 
             <div>
@@ -48,73 +51,40 @@ function Home(){
                     </div>
 
                     <div className="fl w-third">
-                        <h2 className="fw3 f2 mt3 mb4 gray">Hablantes de Español</h2>
+                        <h2 className="fw3 f2 mt3 mb4 gray">¿Sabías que...?</h2>
                     </div>
 
                     <div className="fl w-third">
                         <img src={heartline_icon} alt=''/>
                     </div>
                 </div>
-               
-
-                <div className="textDiv">
-                    <div className="fl w-100">
-                        <h2 className="fw5 f3 mt3 mb4"> Gracias por su interés en Fairmont Community Partnership Group Inc.
-                        Haga clic <Link to="/espanol">aquí</Link> para acceder a la versión en español de esta página.
-                        </h2>
-
-                        <h2 className="fw5 f3 mt3 mb4"> También puede pasar el ratón por encima de las pestañas de la parte 
-                        superior de la pantalla. Aparecerá un cuadro desplegable con la versión en español.
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            <div className="mt5">
-                <div className="TitleDiv">
-                    <div className="fl w-third">
-                        <img src={heartline_icon} alt='heart and line'/>
-                    </div>
-
-                    <div className="fl w-third">
-                        <h2 className="fw3 f2 mt3 mb4 gray">Did You Know?</h2>
-                    </div>
-
-                    <div className="fl w-third">
-                        <img src={heartline_icon} alt='heart and line'/>
-                    </div>
-                </div>
                 
                 <div className="FactsImgContainer">
                     <div className="fl w-third">
-                        <img src={handshearts_icon} alt='three hands raised in front of a heart'/>
+                        <img src={handshearts_icon} alt=''/>
                     </div>
                     <div className="fl w-third">
-                        <img src={tomato_icon} alt='tomato'/>
+                        <img src={tomato_icon} alt=''/>
                     </div>
                     <div className="fl w-third">
-                        <img src={calendar_icon} alt='calendar'/>
+                        <img src={calendar_icon} alt=''/>
                     </div>
                 </div>
 
                 <div className="GrayDivContainer">
                     <div className="GrayDiv">
                         <div className="fl w-third pa2">
-                            <h2 className="fw5 f4 mt3 mb4"> More than x hours have been volunteered.</h2>
+                            <h2 className="fw5 f4 mt3 mb4"> Más de X horas de voluntariado.</h2>
                             <p>Content</p>
                         </div>
 
                         <div className="fl w-third pa2">
-                            <h2 className="fw5 f4 mt3 mb4"> More than x plants in the community garden.</h2>
+                            <h2 className="fw5 f4 mt3 mb4"> Más de X plantas en el jardín comunitario.</h2>
                             <p>Content</p>
                         </div>
 
                         <div className="fl w-third pa2">
-                            <h2 className="fw5 f4 mt3 mb4"> More than x events have been held.</h2>
+                            <h2 className="fw5 f4 mt3 mb4"> Se han celebrado más de X actos celebrado.</h2>
                             <p>Content</p>
                         </div>
                     </div>
@@ -126,26 +96,26 @@ function Home(){
 
 
 
-            <div className="mt5">
+            <div>
 
                 <div className="TitleDiv">
                     <div className="fl w-third">
-                        <img src={heartline_icon} alt='heart and line'/>
+                        <img src={heartline_icon} alt=''/>
                     </div>
 
                     <div className="fl w-third">
-                        <h2 className="fw3 f2 mt3 mb4 gray">Events</h2>
+                        <h2 className="fw3 f2 mt3 mb4 gray">Eventos</h2>
                     </div>
 
                     <div className="fl w-third">
-                        <img src={heartline_icon} alt='heart and line'/>
+                        <img src={heartline_icon} alt=''/>
                     </div>
                 </div>
               
 
                 <div className="textDiv">
-                    <h2 className="fw5 f3 mt3 mb4 tc"> We hold many events, such as Health Fairs and Book & Food Giveaways.
-                    Check back regularly to stay informed!
+                    <h2 className="fw4 f3 mt3 mb4 tc"> Celebramos muchos eventos, como ferias de salud y
+                    sorteos de libros y comida. Visítenos regularmente para mantenerse informado.
                     </h2>
                 </div>
 
@@ -153,17 +123,17 @@ function Home(){
                 <div className="GrayDivContainer">
                     <div className="GrayEventDiv">
                         <div className="fl w-50">
-                            <h2 className="fw5 f4 mt0 mb3"> Thursday, May 4th</h2>
-                            <p className="fw5">COVID-19 Vaccine Clinic, </p>
+                            <h2 className="fw5 f4 mt3 mb3"> Jueves 4 de Mayo</h2>
+                            <p className="fw5">Clínica de vacunas COVID-19,</p> 
                             <p className="fw5">9AM to 12PM</p>
-                            <p className="fw5">Fairmont Community Center</p>
+                            <p className="fw5">Centro Comunitario Fairmont</p>
                         </div>
 
                         <div className="fl w-50">
-                            <h2 className="fw5 f4 mt0 mb3"> Saturday, May 13th</h2>
-                            <p className="fw5">Planting Day and Community Clean Up</p>
-                            <p className="fw5">Time TBA</p>
-                            <p className="fw5">Fairmont Community Garden</p>
+                            <h2 className="fw5 f4 mt3 mb3">Sábado 13 de Mayo</h2>
+                            <p className="fw5">Día de Plantación y Limpieza Comunitaria</p>
+                            <p className="fw5">Hora por determinar</p>
+                            <p className="fw5">Huerto comunitario de Fairmont</p>
                         </div>
                     </div>
                 </div>
@@ -175,18 +145,18 @@ function Home(){
 
 
 
-            <div className="mt5">
+            <div>
                 <div className="TitleDiv">
                     <div className="fl w-third">
-                        <img src={heartline_icon} alt='heart and line'/>
+                        <img src={heartline_icon} alt=''/>
                     </div>
 
                     <div className="fl w-third">
-                        <h2 className="fw3 f2 mt3 mb4 gray">Gallery</h2>
+                        <h2 className="fw3 f2 mt3 mb4 gray">Galería</h2>
                     </div>
 
                     <div className="fl w-third">
-                        <img src={heartline_icon} alt='heart and line'/>
+                        <img src={heartline_icon} alt=''/>
                     </div>
                 </div>
 
@@ -210,10 +180,10 @@ function Home(){
                     </div>
 
                     <div className="Heart">
-                        <Link to="/gallery"><img src={heart_icon} alt='heart'/></Link>
+                        <Link to="/gallery"><img src={heart_icon} alt=''/></Link>
                     </div>
                     <div className="HeartText">
-                        <Link to="/gallery" style={{ color: "white"}}><p>View Our <br></br>Gallery</p></Link>
+                        <Link to="/gallery" style={{ color: "white"}}><p>Ver nuestra</p> <p>Galería</p></Link>
                     </div> 
                 </div>
 
@@ -223,19 +193,18 @@ function Home(){
 
 
 
-            <div className="mt5"> 
+            <div>
                 <div className="TitleDiv">
                     <div className="fl w-third">
-                        <img src={heartline_icon} alt='heart and line'/>
+                        <img src={heartline_icon} alt=''/>
                     </div>
 
                     <div className="fl w-third">
-                        <h2 className="fw3 f2 mt3 mb0 gray">What People Say </h2>
-                        <h2 className="fw3 f2 mt0 mb4 gray">About Us</h2>
+                        <h2 className="fw3 f2 mt3 mb4 gray">Lo que Dice la gente <br></br> Quiénes somos</h2>
                     </div>
 
                     <div className="fl w-third">
-                        <img src={heartline_icon} alt='heart and line'/>
+                        <img src={heartline_icon} alt=''/>
                     </div>
                 </div>
 
@@ -256,7 +225,7 @@ function Home(){
                     </div>
 
                     <div className="LoadMore">
-                        <a class="f3 grow no-underline br-pill pl3 pr3 pt1 pb2 mt4 dib white bg-red tc" href="">Load More</a>
+                        <a class="f3 grow no-underline br-pill pl3 pr3 pt1 pb2 mt4 dib white bg-red tc" href="">Más infomación</a>
                     </div>
                 </div>
 
@@ -265,9 +234,7 @@ function Home(){
 
 
         </div>
-    
-        );
-
+    );
 }
 
-export default Home;
+export default Espanol; 

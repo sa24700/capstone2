@@ -5,10 +5,10 @@ import axios from 'axios';
 const Slide = props => (
       
     <article>
-        <div>
-            
-            <img src={"./uploads/images/" + props.path}/>
-        </div>
+            <h2>{props.element.title}</h2>
+            <img src={"./uploads/images/" + props.path} width='800' height='500'/>
+            <p>{props.element.content}</p>
+
     </article> 
      
 )
@@ -22,7 +22,7 @@ function Gallery(){
     function slideBuilder( ){
        
         if(photos){
-            return <Slide path= {photos[counter].imgPath}/>
+            return <Slide element={photos[counter]} path= {photos[counter].imgPath}/>
         }
         
     }   
@@ -64,8 +64,8 @@ function Gallery(){
 
  
     return (
-                    <div>
-                        <h1>Gallery</h1>
+                    <div className="bg-light-gray pa2">
+                        
                         { loading ? <div><p>Loading . . .</p></div> :  slideBuilder( )  }
                     </div>
                 );

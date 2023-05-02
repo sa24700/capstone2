@@ -1,0 +1,14 @@
+.BackToTopButton {
+    position: fixed;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: #d11220;
+    border: #d11220;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    float: right;
+    bottom: 150px;
+    right: 0;
+}

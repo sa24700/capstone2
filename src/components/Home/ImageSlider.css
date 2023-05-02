@@ -1,0 +1,85 @@
+.SliderContainer {
+    width: 600px;
+    height: 400px;
+    margin-top: 0;
+    position: relative;
+ 
+}
+
+.SlideContainer{
+    display: flex;
+    height: 100%;
+    
+   
+}
+
+.slideDiv{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.slideDivFade{
+    opacity: 1;
+}
+
+
+.sliderDiv{
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.DotDiv{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+
+.Dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 3px solid #f1f1f1;
+    margin: 0 5px;
+    background: #f1f1f1;
+    cursor: pointer;
+}
+
+.Dot.CurrentDot{
+    background: rgb(0, 74, 173);
+    border: 5px solid #004aad;
+}
+
+.leftArrow{
+    position: absolute;
+    transform: translate(0, -50%);
+    left: 235px;
+    bottom: -2px;
+    font-size: 15px;
+    color: #f1f1f1;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.rightArrow{
+    position: absolute;
+    transform: translate(0, -50%);
+    right: 235px;
+    bottom: -2px;
+    font-size: 15px;
+    color: #f1f1f1;
+    z-index: 1;
+    cursor: pointer;
+    
+}
+
+
+

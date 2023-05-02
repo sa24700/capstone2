@@ -1,0 +1,128 @@
+.Header{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin-top: -50px;
+  
+}
+
+.HeaderContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.HeaderRow{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -30px;
+    padding: 1rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.HeaderCol1{
+    width: 250px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin: 0 0 0 0;
+}
+
+.HeaderCol2{
+    max-width: 100%;
+    height: 50px;
+    margin-top: 5rem;
+    margin-left: -30px;
+    display: flex;
+    
+ 
+}
+
+.HeaderCol3{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(226, 226, 226);
+    border-top: 2px solid #949494;
+    border-bottom: 2px solid #949494;
+    margin: auto;
+
+}
+
+
+
+.HeaderLogoCol{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.NavDonateButton{
+    margin-right: 0;
+    margin-left: 1rem;
+    margin-top: 5rem;
+    
+}
+
+.DonateButton{
+    border-radius: 30px;
+    border: none;
+    padding: 10px 10px;
+    display: inline-block;
+    width: 110px;
+    background-color: #d11220;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.DonateButton:hover {
+    transform: scale(1.1);
+}
+
+.DonateLink{
+    text-decoration: none;
+    color: white;
+}
+
+.SearchLogoDiv{
+    width: 100%;
+    height: 20px;
+    display: block;
+
+
+}
+
+
+.SearchLogoDiv img{
+    display: block;
+    height: 25px;
+    width: 25px;
+
+    
+}
+
+.HeaderCol4{
+    display: flex;
+    margin: 0 auto;
+    flex-shrink: 0;
+}
+
+
+.HeaderCol4 img{
+    height: 30px;
+    width: 30px;
+    margin-top: 90px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+
+

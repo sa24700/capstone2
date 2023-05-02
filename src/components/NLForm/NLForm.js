@@ -57,8 +57,8 @@ function NLForm(){
                                 id="title" />
                             </div>
                             <div className="mv3">
-                                <label className="db fw6 lh-copy f6" htmlFor="language" ref={languageInput}>Select A Language</label>
-                                <select name="language" id="language">
+                                <label className="db fw6 lh-copy f6" htmlFor="language">Select A Language</label>
+                                <select name="language" id="language" ref={languageInput}>
                                 <option value="english">English</option>
                                 <option value="spanish">Spanish</option>
                                 </select>

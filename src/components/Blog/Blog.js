@@ -7,11 +7,11 @@ const BlogPost = props => (
       
     <Link to= {props.newPost['_id']}  className=' db black link dim mv2 ' >
         <article className='   bg-blue   ba bw2 b--dark-blue '>
-            
-                <h2>{props.newPost["title"]}</h2>
-                <p>by: {props.newPost["author"]}</p>
-            
-            <div className='h-100 mb0 bt bw2 b--dark-blue bg-light-blue' >
+
+
+            <div className='h-100 mb0   ' >        
+                <h2 className='dark-red f2'>{props.newPost["title"]}</h2>
+                <p>by: {props.newPost["author"]}</p>         
                 <p  className='tl pa3 ' style={{whiteSpace:'pre-wrap'}}>{props.newPost["content"]}</p>   
             </div>
         </article>
@@ -54,7 +54,7 @@ export default class Blog extends Component{
     render(){
         return (
             <div>
-                <h1>Blog</h1>
+
                 <section className='w-50 pa0 ml-auto mr-auto  '>
                     {this.displayPosts()}
                 </section>

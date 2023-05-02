@@ -1,0 +1,48 @@
+.ContactFormContainer{
+    min-width: 100%;
+    height: 100vh;
+
+}
+
+
+.ContactFormContainer input {
+    display: block;
+    width: 500px;
+    height: 50px;
+    padding: .2rem;
+    margin: 10px;
+    border: 5px solid #004aad;
+    outline-color: #004aad;
+    font-size: 25px;
+}
+
+textarea {
+    display: block;
+    width: 500px;
+    height: 40vh;
+    border: 5px solid #004aad;
+    margin: 10px;
+    outline-color: #004aad;
+    font-size: 25px;
+    padding: .5rem;
+}
+
+.SubmitMessage {
+    border-radius: 30px;
+    border: none;
+    padding: 10px 10px;
+    display: inline-block;
+    width: 150px;
+    margin-top: 1rem;
+    margin-right: 20rem;
+    background-color: #d11220;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.SubmitMessage:hover {
+    transform: scale(1.1);
+}
+

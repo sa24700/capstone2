@@ -1,0 +1,117 @@
+.NavContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.NavBar {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    white-space: nowrap;
+    padding: 0 1rem;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.NavBar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+
+
+.NavBar p {
+    color: grey;
+}
+
+
+.NavLogoDiv{
+    display: flex;
+    flex-shrink: 0;
+}
+
+.NavLogoDiv h2{
+    color: #d11220;
+    font-weight: bolder;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px black;
+    margin-top: 5rem;
+}
+
+
+.bl {
+    border-left: 2px solid #004aad;
+    padding-left: 15px;
+}
+
+
+
+.NavLogoDiv img{
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin-top: 40px;
+}
+
+
+
+
+.NavLink{
+    color: gray;
+    text-decoration: none;
+}
+
+
+
+.bg-red{
+    background-color: #d11220;
+}
+
+.NavMenu{
+    font-size: 50px;
+    margin-top: -25px;
+    margin-right: 10px;
+}
+
+.NavMenu i{
+    color: #004aad;
+    
+
+}
+
+.NavList {
+    display: flex;
+}
+
+.NavList a {
+    padding: auto;
+}
+
+.NavMenu {
+    display: none;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+    .NavBar{
+        font-size: 20px;
+    }
+    
+}
+
+

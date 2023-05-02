@@ -29,16 +29,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import NLForm from './components/NLForm/NLForm';
 import AddPhoto from './components/Gallery/AddPhoto';
 import CalEvent from './components/Calendar/CalEvent';
-import NewsletterES from './components/Newsletter/NewsletterES';
+import NewsletterES from './components/Newsletter/NewsletterES'
 import Espanol from './components/Espanol/Espanol.js';
-import Resources from './components/Resources/Resources.js';
-import Contact from './components/Contact/Contact.js';
-import ContactForm from './components/Contact/ContactForm.js';
-import SubNavBar from './components/Navigation/SubNavBar.js';
-import Header from './components/Header/Header.js';
-import Footer from './components/Footer/Footer.js'
-import BackToTop from './components/BackToTop/BackToTop';
-import NewsletterUpload from './components/Newsletter/NewsletterUpload';
+
 class App extends Component {
   constructor() {
     super();
@@ -73,9 +66,7 @@ class App extends Component {
     render(){
       return(
         <div className="App">
-          <div className="Container">
-            <div className="Wrapper">
-              <Header />
+          <Navigation/>
           <Routes>
             <Route index path="/" element={<Home/>}/>
             <Route path="signin" element={<Signin loadUser={this.loadUser} getAppUser={this.getAppUser}/>}/>
@@ -87,31 +78,18 @@ class App extends Component {
             <Route path="chatroom" element={<Chatroom getAppUser={this.getAppUser}/>}/>
             <Route path="donate" element={<Donate/>}/>
             <Route path="newsletter" element={<Newsletter/>}/>
-            <Route path="newsletterES" element={<NewsletterES/>}/>
             <Route path="download-emails" element={<DownloadEmails/>}/>
             <Route path="admin-panel" element={<AdminPanel/>}/>
             <Route path="user-management" element={<UserManagement/>}/>
             <Route path="support-link-management" element={<SupportLinkManagement/>}/>
             <Route path="create-new-post" element={<CreateBlogPost/>}/>
             <Route path="createEvent" element={<CreateEvent/>}/>
-			      <Route path = "calendar/:key" element={<CalEvent/>}/>
+			<Route path = "calendar/:key" element={<CalEvent/>}/>
             <Route path="calendar" element={<Calendar/>}/>
             <Route path="send-newsletter-post" element={<NLForm/>}/>
-            <Route path="NewsletterUpload" element={<NewsletterUpload/>}/>
             <Route path="AddPhoto" element={<AddPhoto/>}/>
-            <Route path="Espanol" element={<Espanol/>}/>
-            <Route path="Resources" element={<Resources/>}/>
-            <Route path="Contact" element={<Contact/>}/>
-            <Route path="ContactForm" element={<ContactForm/>}/>
-            <Route path="SubNavBar" element={<SubNavBar/>}/>
-            <Route path="Header" element={<Header/>}/>
-            <Route path="Footer" element={<Footer/>}/>
+             <Route path="Espanol" element={<Espanol/>}/>
           </Routes>
-          <BackToTop/>
-            </div>
-            
-              <Footer />
-        </div>
         </div>
       );
     }

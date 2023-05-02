@@ -1,0 +1,97 @@
+.ResourcesBanner {
+    max-width: 100%;
+    height: 200px;
+    display: block;
+    background-image: linear-gradient(0deg, rgb(255, 255, 255, 0.5), rgb(255, 255, 255, 0.5)), url(https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/66503374_2335689036697030_2477537565276635136_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=2xy2nQ-zbtMAX9TOhBS&_nc_ht=scontent-ord5-1.xx&oh=00_AfBaMo7tR01OHDtuU20mwVo79IEYXWNzs5H5mOlDq_peYg&oe=64603094);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 55%;
+    padding: 2em;
+}
+
+.ResourcesBanner h1{
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    text-shadow: 5px 5px 5px black;
+}
+
+
+.ResourcesTitleDiv{
+    color: #004aad;
+}
+
+.ResourceLink{
+    color: #004aad;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    
+}
+
+.ResourceLink:hover{
+    color: #88b4ec;
+}
+
+
+.ResourcesContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.ResourceCol1{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+    border-right: 3px solid slategray;
+}
+
+.ResourceCol2{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.ResourcesTextDiv{
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    text-align: left;
+
+}
+
+.ResourcesTextDiv p{
+    color: slategrey;
+    font-size: 25px;
+    font-weight: 500;
+
+}
+
+
+.ResourcesTextDiv h1{
+    color: rgb(0, 74, 173);
+    font-size: 40px;
+
+}
+
+.ResourceName{
+    display: flex;
+    margin: 0;
+}
+
+.ResourceName img{
+    height: 20px;
+    width: 25px;
+    margin-top: 10px;
+}
+
+
+.ResourceName h2{
+    font-size: 30px;
+}

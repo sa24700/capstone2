@@ -1,8 +1,8 @@
 const express = require('express');
-
+const fs = require("fs");
 const bcrypt = require('bcrypt');
 const multer = require('multer');
-
+var path = require('path');
 app = express();
   
 
@@ -173,21 +173,56 @@ app.post('/sendNewsletter',  async function(req,res){
 
 
 });
+app.get('/getAllNewsletters', async function(req,res) {
+   
+  try{
+      
+    const allNewsletters = await Newsletter.find( );
+    
+     res.end(JSON.stringify(allNewsletters));
+  }
+  catch(e){
+    console.log(e);
+  }
 
-app.post('/uploadNewsletter', newsletterUpload.single("newsletter") ,function(req,res)  {
+});
+app.get('/getAllNewsletters/:key', async function(req,res) {
+  const langChoice = req.params.key;
+  try{    
+    const allNewsletters = await Newsletter.find({language:langChoice});
+     res.end(JSON.stringify(allNewsletters));
+  }
+  catch(e){
+    console.log(e);
+  }
 
-  var uploadNewsletter = req.body.newsletter;
+});
+
+app.post('/uploadNewsletter', newsletterUpload.single("file") ,async function(req,res)  {
+  await Newsletter.findOneAndUpdate({_id: req.body.id}, {path:req.body.fileName});
+  var uploadNewsletter = req.body.fileName;
   res.status(200).send(uploadNewsletter);
 
 });
 
 
-app.get('/getNewsletter/:newsletter', function(req,res){
-  console.log("params " +  __dirname+'/public/uploads/newsletter/'+req.params.newsletter);
-  res.download( './public/uploads/newsletter/'+req.params.newsletter);
+app.get('/getNewsletter/:file', function(req,res){
+  res.download( './public/uploads/newsletter/'+req.params.file);
 
 });
 
+app.get('/printNewsletter/:key', async function(req,res) {
+  
+  try{  
+     res.contentType("application/pdf");
+     res.sendFile( path.join(__dirname + `/public/uploads/newsletter/${req.params.key}`));
+  }
+  catch(e){
+    console.log(e);
+  }
+
+});
+ 
 ///////////////////////////////
 ///
 ///   Calls for signup and Register 
@@ -230,10 +265,6 @@ app.post('/login', async function(req,res){
               console.log("Access Denied")
             }
         });
-
-    
-
-
 });
 
 app.post('/users', function(req,res){
@@ -248,7 +279,6 @@ app.post('/users', function(req,res){
 ///////////////////////////////
 
 app.post('/createPost', async function(req,res){
-  console.log("create post data " + req.body)
     const blogEntry = new Blog({
         title: req.body.title,
         author: req.body.author,
@@ -262,12 +292,9 @@ app.post('/createPost', async function(req,res){
 });
 
 app.post('/createPost/singleFile', upload.single("file"), async function(req,res){
-  console.log("singleFile data " + JSON.stringify(req.body))
   const file = req.file 
 
   if(file){
-    
-  
     const blogEntry = new Blog({
         title: req.body.title,
         author: req.body.author,
@@ -286,7 +313,6 @@ app.post('/createPost/singleFile', upload.single("file"), async function(req,res
 });
 
 app.post('/createPost/manyFiles', upload.array("file", 20), async function(req,res){
-  console.log("multiple files data " + JSON.stringify(req.body))
     const blogEntry = new Blog({
         title: req.body.title,
         author: req.body.author,
@@ -302,8 +328,7 @@ app.post('/createPost/manyFiles', upload.array("file", 20), async function(req,r
 app.get('/showAllBlogPosts', async function(req,res){
   try{
       
-    const allPosts = await Blog.find();
-    
+    const allPosts = await Blog.find();   
      res.end(JSON.stringify(allPosts));
   }
   catch(e){
@@ -312,13 +337,10 @@ app.get('/showAllBlogPosts', async function(req,res){
 
 });
 app.get('/getPost/:key', async function(req,res){
-  try{ 
-      
+  try{     
     var blogID = await Blog.find({_id: req.params.key})
      blogID = JSON.stringify(blogID);
      res.end(blogID);
-
-   
   }
   catch(e){
     console.log(e);
@@ -327,7 +349,6 @@ app.get('/getPost/:key', async function(req,res){
 });
 
 app.get('/getFile/:file', function(req,res){
-  console.log("params " +  __dirname+'/public/uploads/'+req.params.file);
   res.download( './public/uploads/'+req.params.file);
 
 });
@@ -358,14 +379,10 @@ app.post('/createEvent', async function(req,res){
   
 
 });
-app.post('/createEvent/:id', function(req,res){
-
-});
 app.get('/showEvents', async function(req,res){
   
   try{
     const eventsList = await Event.find({});
-    console.log("events " + eventsList);
      res.end(JSON.stringify(eventsList));
   }
   catch(e){
@@ -374,6 +391,20 @@ app.get('/showEvents', async function(req,res){
 
 });
 
+app.get('/getEvent/:key', async function(req,res){
+  try{ 
+      
+    var eventID = await Event.find({_id: req.params.key})
+    eventID = JSON.stringify(eventID);
+     res.end(eventID);
+
+   
+  }
+  catch(e){
+    console.log(e);
+  }
+ 
+});
 ///////////////////////////////
 ///
 ///   Gallery function 
@@ -381,7 +412,6 @@ app.get('/showEvents', async function(req,res){
 ///////////////////////////////
 
 app.post('/uploadPhoto', imgUpload.single('file'), async function(req,res){
- console.log("here is content " + JSON.stringify(req.body.fileName));
  const file = req.file;
 
   if(file){
@@ -408,7 +438,6 @@ app.get('/getPhotos', async function(req,res){
   
   try{
     const gallery = await Image.find({});
-    console.log("gallery " + gallery);
      res.end(JSON.stringify(gallery));
   }
   catch(e){
@@ -418,7 +447,6 @@ app.get('/getPhotos', async function(req,res){
 });
 
 app.get('/getPhoto/:file', function(req,res){
-  console.log("params " +  __dirname+'/public/uploads/images/'+req.params.file);
   res.end( '/public/uploads/images/'+req.params.file);
 
 });
