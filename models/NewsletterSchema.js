@@ -5,7 +5,8 @@ const newsletterSchema = new Schema({
  title: String,
  content: String,
  date: Date,
- language: String
+ language: String,
+ path: String
 });
 
 const Newsletter = model('Newsletter', newsletterSchema);
